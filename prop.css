@@ -99,7 +99,7 @@ button{
 }
 
 .social-icons a:hover {
-    color: rgb(130, 12, 130);
+    color:rgba(93, 42, 156);
     transform: translateY(-5px);
 
 }
