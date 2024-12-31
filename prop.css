@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-     background-image: url('6436961_3312580.jpg');
+     background-image: url('Background.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -129,7 +129,7 @@ select{
     border: 0;
     border-radius: 35px;
     appearance: none;
-    background-image: url(dropdown.png);
+    background-image: url(select.png);
     background-repeat:no-repeat;
     background-size: 15px;
     background-position-x:calc(100% - 20px) ;
