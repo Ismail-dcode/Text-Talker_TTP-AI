@@ -11,23 +11,46 @@ themeToggle.addEventListener('change', () => {
     localStorage.setItem('theme', newTheme);
 });
 
-
 const textarea = document.querySelector('textarea');
 const selectVoice = document.querySelector('select');
 const button = document.querySelector('button');
 
 let voices = [];
 
-function loadVoices() {
+function populateVoiceList() {
     voices = speechSynthesis.getVoices();
+    
+    if (voices.length === 0) {
+        selectVoice.innerHTML = '<option value="">No voices available</option>';
+        return false;
+    }
+
     selectVoice.innerHTML = voices
         .map((voice, index) => `<option value="${index}">${voice.name} (${voice.lang})</option>`)
         .join('');
+    return true;
 }
 
-speechSynthesis.addEventListener('voiceschanged', loadVoices);
+function initVoices() {
+   
+    const voicesLoaded = populateVoiceList();
+    
+    if (!voicesLoaded) {
+        
+        speechSynthesis.addEventListener('voiceschanged', () => {
+            populateVoiceList();
+        });
+       
+        setTimeout(() => {
+            if (voices.length === 0) {
+                populateVoiceList();
+            }
+        }, 1000);
+    }
+}
 
-loadVoices();
+
+initVoices();
 
 button.addEventListener('click', () => {
     const text = textarea.value.trim();
@@ -39,9 +62,19 @@ button.addEventListener('click', () => {
     speechSynthesis.cancel();
 
     const utterance = new SpeechSynthesisUtterance(text);
+    
+    // Refresh voices list before speaking
+    voices = speechSynthesis.getVoices();
     const selectedVoice = voices[selectVoice.value];
+    
     if (selectedVoice) {
         utterance.voice = selectedVoice;
+    } else {
+       
+        const availableVoices = speechSynthesis.getVoices();
+        if (availableVoices.length > 0) {
+            utterance.voice = availableVoices[0];
+        }
     }
 
     button.style.opacity = '0.7';
