@@ -41,4 +41,4 @@ Javascript, HTML, CSS | API Integration | Gen-AI Concept.
 ## Demo
 
 VISIT HERE : 
-[https://ismail-dcode.github.io/Text-Talker_(TTP)-AI](https://ismail-dcode.github.io/Text-Talker_TTP--AI/)
+[https://ismail-dcode.github.io/Text-Talker_(TTP)-AI](https://ismail-dcode.github.io/Text-Talker_TTP-AI/)
