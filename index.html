@@ -1,44 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TextTalker</title>
-    <link rel="stylesheet" href="prop.css" class="style">
-
+    <title>TextTalker - Modern Text to Speech</title>
+    <link rel="stylesheet" href="prop.css">
     <script src="https://kit.fontawesome.com/944d189c85.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="hero">
-       <h1>Text To Speech <span>Covertor</span> </h1>
-       <p>Here is an system for
-        Seamless <span>Text-to-Speech</span> Conversion at Your Fingertips.</p>
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-circle-microphone"></i>
+                <h1>TextTalker</h1>
+            </div>
 
-       <textarea placeholder="Write anything here...."></textarea>
-       <div class="row">
-        <select></select>
+            <label class="theme-toggle">
+                <span class="theme-label">Change Theme</span>
+                <div class="slider-container">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider"></span>
+                </div>
+            </label>
 
+            <nav class="nav-links">
+                <a href="#convert">
+                    <i class="fas fa-microphone"></i>
+                    Text to Speech
+                </a>
+                <a href="#voices">
+                    <i class="fas fa-volume-up"></i>
+                    Multiple Voices
+                </a>
+                <a href="#languages">
+                    <i class="fas fa-language"></i>
+                    Languages
+                </a>
+                <a href="#settings">
+                    <i class="fas fa-sliders-h"></i>
+                    Controls
+                </a>
+            </nav>
 
-        <button> <img src="play.png">Listen</button>
-       </div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/ismail-shaikh-19798a335/" target="_blank" aria-label="LinkedIn Profile">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn Profile</span>
+                </a>
+                <a href="https://github.com/Ismail-dcode/TextTalker" target="_blank" aria-label="GitHub Repository">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub Project</span>
+                </a>
+            </div>
+        </aside>
 
-       <footer class="foot">
-     Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit accusantium deleniti, suscipit quae amet a cumque accusamus officia cum placeat dicta similique ratione facere quisquam? A repellat nemo praesentium beatae.
-          
-        <br>
-        <span>© Ismail-dcode | 2024</span>
-    </footer>
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/ismail-shaikh-19798a335/" target="_blank"><i
-                    class="fa-brands fa-linkedin"></i></a>
-            <a href="https://github.com/Ismail-dcode/Ismail-dcode" target="_blank"><i
-                    class="fa-brands fa-github"></i></a>
+        <main class="main-content">
+            <div class="text-content">
+                <h2>Transform Text into Natural Speech</h2>
+                <p>Experience seamless text-to-speech conversion with our powerful and intuitive converter. Just type or paste your text below.</p>
+            </div>
 
-        </div>
+            <textarea placeholder="Start typing or paste your text here..." aria-label="Text to convert to speech"></textarea>
+            
+            <div class="controls">
+                <select aria-label="Select voice">
+                    <option value="">Choose a Voice</option>
+                </select>
+                <button>
+                    <i class="fas fa-play"></i>
+                    Listen
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2024 TextTalker. All rights reserved.</p>
+        </footer>
     </div>
-    </div>
-    </div>
-
 
     <script src="prop.js"></script>
 </body>
